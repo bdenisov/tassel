@@ -4,13 +4,13 @@ import string
 import math
 
 def init():
-	fontpath = "Leto-Text-Sans-Defect.otf"
-	fontpath = "Silverfinster.ttf" # optimal size 7
-	fontsize = 7
+	fontpath = "../fonts/Leto-Text-Sans-Defect.otf"
+#	fontpath = "../fonts/Silverfinster.ttf" # optimal size 7
+	fontsize = 24
 	symbolpadding = 2
 	symbolheight = fontsize + symbolpadding*2
 	
-	respath = "../../firmware/fonts/font-"+str(fontsize)+".fnt"
+	respath = "../examples/fonts/font-"+str(fontsize)+".fnt"
 	
 	font = ImageFont.FreeTypeFont(fontpath, fontsize, encoding='cp1251')
 	
