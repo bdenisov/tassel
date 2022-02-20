@@ -3,12 +3,21 @@ from bitarray import bitarray
 import string
 import math
 
-def init():
-	fontpath = "../fonts/Leto-Text-Sans-Defect.otf"
-#	fontpath = "../fonts/Silverfinster.ttf" # optimal size 7
-	fontsize = 24
-	symbolpadding = 2
-	symbolheight = fontsize + symbolpadding*2
+
+def getSymbolTable():
+	return "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяЁё←↑→↓↔•‣◦"
+
+def init():	
+	convertFont(
+		"../sources/Leto-Text-Sans-Defect.otf",
+		24,	# fontsize
+		2,	# symbols padding
+		28	# max symbol height, from top of "Ё" to bottom of "g" (optional)
+	)
+
+def convertFont(fontpath, fontsize, symbolpadding, symbolheight=0):
+	if symbolheight==0:
+		symbolheight = fontsize + symbolpadding*2
 	
 	respath = "../examples/fonts/font-"+str(fontsize)+".fnt"
 	
@@ -130,8 +139,6 @@ def testMap(map,im,x0,y0,fontsize,symbolheight):
 			x = 0
 
 
-def getSymbolTable():
-	return "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяЁё←↑→↓↔•‣◦"
 	#s=string.printable
 	#for c in range(1025,1104):
 #		s+=chr(c)

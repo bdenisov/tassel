@@ -4,18 +4,16 @@ import string
 import math
 
 def init():
-	imgpath = "../../firmware/images/full.png"
-	respath = "../../firmware/images/full.img"
 	
-	#oneImage("../../firmware/images/full.png","../../firmware/images/full.img")
+	#oneImage("../sources/icon.png","../examples/images/icon.img")
 	groupOfImages(
-		"../../firmware/images/icons2.png",
-		"../../firmware/images/icons.img",
-		(44,44),
-		(35,18),
-		(32,28),
-		14,
-		23
+		"../sources/icons2.png",
+		"../examples/images/icons.img",
+		(44,44),    # one icon size
+		(35,18),    # indent from left top corner
+		(32,28),    # width and height between border of adjacent icons
+		14,         # number of columns
+		23          #        ...rows
 	)
 
 
